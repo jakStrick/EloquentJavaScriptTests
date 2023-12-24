@@ -186,20 +186,20 @@ namespace EloquentJavaScriptTests
                 ccNum[i] = Int32.Parse(cc[cnt].ToString()) * 2;
                 ccNum1[i] = Int32.Parse(cc[cnt + 1].ToString());
 
-                Console.WriteLine("ccNum values " + ccNum[i]);
-                Console.WriteLine("ccNum1 values " + ccNum1[i]);
+                //Console.WriteLine("ccNum values " + ccNum[i]);
+                //Console.WriteLine("ccNum1 values " + ccNum1[i]);
 
                 if (ccNum[i] >= 10)
                 {
                     int num1 = ccNum[i] / 10;
                     int num2 = ccNum[i] % 10;
                     ccNum[i] = num1 + num2;
-                    Console.WriteLine("ccNum if >= 10 added values " + ccNum[i]);
+                    //Console.WriteLine("ccNum if >= 10 added values " + ccNum[i]);
                 }
 
                 checksum += ccNum[i] + ccNum1[i];
-                Console.WriteLine("checksum value " + checksum);
-                Console.WriteLine();
+                //Console.WriteLine("checksum value " + checksum);
+                //Console.WriteLine();
 
                 cnt += 2;
             }
