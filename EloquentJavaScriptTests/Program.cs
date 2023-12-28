@@ -31,31 +31,8 @@ namespace EloquentJavaScriptTests
             //CreditCardValidator();
 
             //Transform matrixes with ChatGPT
-
-            //pixels to mm
-            double pixelsPerMicron = 3;
-
-            double[,] transformationMatrix = GetTransformationMatrix(pixelsPerMicron);
-
-            Console.WriteLine("Transformation Matrix:");
-            PrintMatrix(transformationMatrix);
-
-            //Transform data and outputs
-            double x_offset = 2;
-            double y_offset = 3;
-            double theta_offset = 45; // in degrees
-
-            double[] inputPoint = { 1, 1 };
-
-            //X, Y and T offsets.
-            // Get the transformation matrix
-            double[,] matrix = GetTransformationMatrix(x_offset, y_offset, theta_offset);
-
-            // Apply the transformation to the input point
-            double[] outputPoint = ApplyTransformation(inputPoint, matrix);
-
-            Console.WriteLine($"Input Point: [{string.Join(", ", inputPoint)}]");
-            Console.WriteLine($"Output Point: [{string.Join(", ", outputPoint)}]");
+            PixTo_mm();
+            Transform_XYT_Offsets();
         }
 
         //finds minimum between two numbers
@@ -281,6 +258,36 @@ namespace EloquentJavaScriptTests
         /// <returns></returns>
 
         //pixels to mm
+        private static void PixTo_mm()
+        {
+            double pixelsPerMicron = 3;
+
+            double[,] transformationMatrix = GetTransformationMatrix(pixelsPerMicron);
+
+            Console.WriteLine("Transformation Matrix:");
+            PrintMatrix(transformationMatrix);
+        }
+
+        private static void Transform_XYT_Offsets()
+        {
+            //X, Y and T offsets.
+            // Get the transformation matrix
+            //Transform data and outputs
+            double x_offset = 2;
+            double y_offset = 3;
+            double theta_offset = 45; // in degrees
+
+            double[] inputPoint = { 1, 1 };
+
+            double[,] matrix = GetTransformationMatrix(x_offset, y_offset, theta_offset);
+
+            // Apply the transformation to the input point
+            double[] outputPoint = ApplyTransformation(inputPoint, matrix);
+
+            Console.WriteLine($"Input Point: [{string.Join(", ", inputPoint)}]");
+            Console.WriteLine($"Output Point: [{string.Join(", ", outputPoint)}]");
+        }
+
         private static double[,] GetTransformationMatrix(double pixelsPerMicron)
         {
             double scalingFactor = 1.0 / pixelsPerMicron;
