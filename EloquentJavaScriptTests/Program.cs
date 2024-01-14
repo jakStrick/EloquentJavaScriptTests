@@ -1,6 +1,9 @@
-﻿// This is a collection of small functions I created
-// for either school assignments or from the book Eloquent JavaScript
+﻿//////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+// This is a collection of small functions I created
+// for either school assignments or from the book Eloquent JavaScript but in c#
 // 2020 - 2023
+//
 
 namespace EloquentJavaScriptTests
 {
@@ -9,6 +12,7 @@ namespace EloquentJavaScriptTests
         // program's entry point
         private static void Main(string[] args)
         {
+            //Enter a cc number and see if it's valid
             CCValidator.CreditCardValidator();
 
             Console.WriteLine("The min value is " + Maths.Min(3, 1));
@@ -27,6 +31,8 @@ namespace EloquentJavaScriptTests
             //Transform matrixes with ChatGPT
             Maths.PixTo_mm();
             Maths.Transform_XYT_Offsets();
+
+            MarioPyramid.BuildPyramid();
         }
     }
 }
