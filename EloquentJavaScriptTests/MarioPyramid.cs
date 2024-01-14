@@ -6,6 +6,7 @@ namespace EloquentJavaScriptTests
     {
         public static void BuildPyramid()
         {
+            Console.WriteLine("Building a pyramid.");
             Console.Write("Please Enter Height: ");
             int hgt = Convert.ToInt32(Console.ReadLine());
 
@@ -13,8 +14,8 @@ namespace EloquentJavaScriptTests
                 return;
 
             int spcCnt = hgt;
-
             hgt *= 2;
+            string spc;
 
             for (string sym = "#"; sym.Length <= hgt; sym += "#")
             {
@@ -23,7 +24,6 @@ namespace EloquentJavaScriptTests
                 Console.WriteLine(spc + sym);
 
                 sym += "#";
-                spc = "";
                 spcCnt -= 1;
             }
         }

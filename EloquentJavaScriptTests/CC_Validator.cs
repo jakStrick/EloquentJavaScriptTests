@@ -9,6 +9,7 @@ namespace EloquentJavaScriptTests
         //cc validator
         public static void CreditCardValidator()
         {
+            Console.WriteLine("Validating a cc number");
             do
             {
                 Console.Write("Please enter a valid CC number or E/e to End ");

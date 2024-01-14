@@ -5,6 +5,7 @@
         //finds minimum between two numbers
         public static int Min(int n1, int n2)
         {
+            Console.WriteLine("Finiding minimum number.");
             if (n1 < n2)
                 return n1;
             else
@@ -15,10 +16,16 @@
         public static bool IsEvenRecursive(int n)
         {
             if (n == 0)
+            {
+                Console.WriteLine("Finding Even number recursive methnod.");
                 return true;
+            }
 
             if (n < 0 || n == 1)
+            {
+                Console.WriteLine("Finding Even number recursive methnod.");
                 return false;
+            }
             else
                 return IsEvenRecursive(n - 2);
         }
@@ -26,6 +33,7 @@
         //check if number is even with modulous
         public static bool IsEvenModulus(int n)
         {
+            Console.WriteLine("Finding Even number modulus methnod.");
             if (n % 2 == 0)
                 return true;
 
@@ -35,6 +43,7 @@
         //Get a range from two numbers
         public static object GetRange(int start, int end)
         {
+            Console.WriteLine("Finding range between two numbers.");
             int step = start < end ? 1 : -1;
 
             //var array = new int[80];
@@ -69,6 +78,7 @@
 
         public static int Sum(int[] array)
         {
+            Console.WriteLine("Summing up all numbers including start to end.");
             var total = 0;
             foreach (int value in array)
             {
@@ -86,6 +96,7 @@
         //pixels to mm
         public static void PixTo_mm()
         {
+            Console.WriteLine("Finding pix/ mm.");
             double pixelsPerMicron = 3;
 
             double[,] transformationMatrix = GetTransformationMatrix(pixelsPerMicron);
@@ -96,6 +107,7 @@
 
         public static void Transform_XYT_Offsets()
         {
+            Console.WriteLine("Finding coef from XYT offset.");
             //X, Y and T offsets.
             // Get the transformation matrix
             //Transform data and outputs
