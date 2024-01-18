@@ -21,12 +21,25 @@ namespace EloquentJavaScriptTests
 
             Console.WriteLine("The number is even " + Maths.IsEvenModulus(5));
 
-            int[] range = (int[])Maths.GetRange(10, 0);
+            //get all numbers between two numbers
+            int[] range = Maths.GetRange(10, 0);
 
-            for (int i = 0; i < range.Length; i++)
-                Console.WriteLine("All numbers in the range = " + range[i]);
+            //reverse the array that stored the numbers.
+            Maths.ReverseArray(range);
 
+            //sum up those numbers
             Console.WriteLine("Sum of the range = " + Maths.Sum(range));
+
+            //Flatten this 2D array
+            int[][] vals = {
+                new[] {1, 2, 3},
+                new[] {4},
+                new[] {5, 6, 6, 2, 7, 8},
+            };
+
+            Console.WriteLine(string.Join(", ", Maths.FlattenArrayLinq(vals)));
+
+            Maths.FlattenArray(vals);
 
             //Transform matrixes with ChatGPT
             Maths.PixTo_mm();

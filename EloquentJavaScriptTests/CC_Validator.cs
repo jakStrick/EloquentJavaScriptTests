@@ -111,15 +111,13 @@ namespace EloquentJavaScriptTests
 
             switch (ccNums)
             {
-                case "34":
-                case "37":
-
-                    m_ccType = "AMEX";
+                case "4":
+                    m_ccType = "VISA";
                     return true;
 
-                case "4":
-
-                    m_ccType = "VISA";
+                case "34":
+                case "37":
+                    m_ccType = "AMEX";
                     return true;
 
                 case "51":

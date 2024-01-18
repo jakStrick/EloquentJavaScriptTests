@@ -1,4 +1,9 @@
-﻿namespace EloquentJavaScriptTests
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace EloquentJavaScriptTests
 {
     public static class Maths
     {
@@ -40,8 +45,64 @@
             return false;
         }
 
+        //reverse an array of numbers
+        public static int[] ReverseArray(int[] array)
+        {
+            Console.WriteLine("Reversing the array.");
+            int arraySize = array.Length;
+
+            int[] newArray = Array.Empty<int>();
+
+            Array.Resize(ref newArray, arraySize + 1);
+
+            int cnt = 0;
+
+            for (int i = arraySize; i > 0; i--)
+            {
+                newArray[cnt] = array[i - 1];
+                Console.Write(newArray[cnt] + ", ");
+                cnt++;
+            }
+
+            Console.WriteLine();
+
+            return newArray;
+        }
+
+        /// <summary>
+        /// Flatten to two dimential array and put numbers in sequencial order using LINQ
+        /// </summary>
+        /// <param name="array"></param>
+        public static IEnumerable<int> FlattenArrayLinq(int[][] vals)
+        {
+            Console.WriteLine("Flatening a multi dimentional array to one dimention using LINQ.");
+            var res = vals.SelectMany(a => a).OrderBy(e => e); ;
+            return res;
+        }
+
+        // <summary>
+        /// Flatten to two dimential array.
+        /// </summary>
+        /// <param name="array"></param>
+        public static int[] FlattenArray(int[][] vals)
+        {
+            Console.WriteLine("Flatening a multi dimentional array to one dimention.");
+            int[] res = new int[vals.Length];
+            for (int i = 0; i < vals.Length; i++)
+            {
+                for (int j = 0; j < vals[i].Length; j++)
+                {
+                    res[i] = vals[i][j];
+                    Console.Write(", " + res[i]);
+                }
+            }
+            Console.WriteLine();
+
+            return res;
+        }
+
         //Get a range from two numbers
-        public static object GetRange(int start, int end)
+        public static int[] GetRange(int start, int end)
         {
             Console.WriteLine("Finding range between two numbers.");
             int step = start < end ? 1 : -1;
@@ -72,6 +133,11 @@
                     array[i] = start + i;
                 }
             }
+
+            for (int i = 0; i < array.Length; i++)
+                Console.Write(array[i] + ", ");
+
+            Console.WriteLine();
 
             return array;
         }
