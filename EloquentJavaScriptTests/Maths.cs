@@ -7,6 +7,8 @@ namespace EloquentJavaScriptTests
 {
     public static class Maths
     {
+        public static int[][]? TwoDArray { get; set; }
+
         //finds minimum between two numbers
         public static int Min(int n1, int n2)
         {
@@ -99,6 +101,15 @@ namespace EloquentJavaScriptTests
             Console.WriteLine();
 
             return res;
+        }
+
+        public static void SetTwoDArray()
+        {
+            TwoDArray = new int[][] {
+                new[] { 1, 2, 3 },
+                new[] { 4 },
+                new[] { 5, 6, 6, 2, 7, 8 },
+            };
         }
 
         //Get a range from two numbers
